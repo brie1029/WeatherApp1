@@ -70,7 +70,7 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  let fahrenheitTemperature = response.data.temperature.current;
+  fahrenheitTemperature = response.data.temperature.current;
 
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   cityElement.innerHTML = response.data.city;
