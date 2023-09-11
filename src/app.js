@@ -20,7 +20,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours} ${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function displayTemperature(response) {
@@ -42,7 +42,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.dscription);
 }
 
-function seearch(city) {
+function search(city) {
 let apiKey = "3bddcf4o5cba4b6ddt08f37131006903";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(displayTemperature);
@@ -54,7 +54,7 @@ function handleSubmit(event){
     seearch(cityInputElement.value);
 }
 
-seearch("New York");
+search("New York");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
