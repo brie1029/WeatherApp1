@@ -41,7 +41,7 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
-  iconElement.setAttribute("alt", response.data.condition.dscription);
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 function search(city) {
@@ -62,9 +62,8 @@ function displayCelsiusTemperature(event) {
   
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
-  let celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
+  let celsiusTemperature = (fahrenheitTemperature - 32) * 0.5556;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  console.log(celsiusTemperature);
 }
 
 function displayFahrenheitTemperature(event) {
