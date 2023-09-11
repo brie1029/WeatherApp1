@@ -38,6 +38,6 @@ function displayTemperature(response) {
 
 let apiKey = "3bddcf4o5cba4b6ddt08f37131006903";
 let apiUrl =
-  "https://api.shecodes.io/weather/v1/current?query=New York&key=3bddcf4o5cba4b6ddt08f37131006903&unints=imperial";
+  "https://api.shecodes.io/weather/v1/current?query={New York}&key={3bddcf4o5cba4b6ddt08f37131006903}";
 
 axios.get(apiUrl).then(displayTemperature);
