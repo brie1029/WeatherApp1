@@ -42,8 +42,19 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.dscription);
 }
 
+function seearch(city) {
 let apiKey = "3bddcf4o5cba4b6ddt08f37131006903";
-let city = "Barcelona";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-
 axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    seearch(cityInputElement.value);
+}
+
+seearch("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
