@@ -108,3 +108,8 @@ li:first-letter {
 .src-link:hover {
   text-decoration: none;
 }
+
+footer {
+    bottom: 0%;
+    position: fixed;
+}
